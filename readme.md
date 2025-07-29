@@ -20,8 +20,8 @@
 ---
 
 ## 🧩 Tech Stack
-- *Frontend*: React + Tailwind CSS (Vite setup)
-- *Backend*: Node.js, Express.js, MongoDB
+- *Frontend*: React + Tailwind CSS (Vite setup) + Typescript
+- *Backend*: Node.js, Express.js, PostgreSQL
 - *Version Control*: GitHub
 
 ---
@@ -37,6 +37,8 @@
 ## 🚀 Future Developments & Vision
 MealBridge is more than just a donation tracker — it's a *movement* toward community-driven, tech-powered food justice. Here's where we're headed:
 
+
+## ours future works
 ### 📱 Mobile App (Android/iOS)
 - Dedicated app for households, restaurants, and NGOs
 - Push notifications for real-time donation updates
@@ -98,4 +100,6 @@ cd food-waste-tracker/frontend
 npm install
 
 # Start dev server
-npm run dev+
+npm run dev
+
+database is deployed locally
