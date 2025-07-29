@@ -32,9 +32,9 @@ const Signup = () => {
       alert("Passwords do not match.");
       return;
     }
-
+  
     try {
-      const response = await fetch("http://localhost:5000/api/signup", {
+      const response = await fetch("http://localhost:3001/api/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -78,7 +78,7 @@ const Signup = () => {
         />
 
         <select
-          name="userType"
+          name="type"
           value={formData.type}
           onChange={handleChange}
           className="w-full px-4 py-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-teal-500"
@@ -110,10 +110,11 @@ const Signup = () => {
 
         <input
           type="text"
-          name="contact"
+          name="phone"
           value={formData.phone}
           onChange={handleChange}
-          placeholder="Contact Number (optional)"
+          placeholder="Contact Number"
+          required
           className="w-full px-4 py-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
 
@@ -121,16 +122,18 @@ const Signup = () => {
           name="address"
           value={formData.address}
           onChange={handleChange}
-          placeholder="Address (optional)"
+          placeholder="Address"
           className="w-full px-4 py-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-teal-500"
+          required
         />
 
         <input
           type="text"
-          name="location"
+          name="city"
           value={formData.city}
           onChange={handleChange}
-          placeholder="Location (optional)"
+          placeholder="Location"
+          required
           className="w-full px-4 py-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
 
