@@ -7,3 +7,16 @@ export interface SignupFormData {
   city: string;
   password: string;
 }
+
+export interface Donation {
+  id?: number;
+  food_name: string;
+  quantity: number;
+  food_type: string;
+  avg_food_per_person: number;
+  waste_reason: string;
+  notes: string;
+  donated_by: number;
+  timestamp?: string;
+}
+

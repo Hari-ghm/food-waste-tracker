@@ -41,7 +41,14 @@ router.post("/signin", async (req, res) => {
       [email, password]
     );
     if (result.rowCount === 1) {
-      res.json({ message: "Login successful" });
+      const user = result.rows[0];
+
+      res.status(200).json({
+        message: "Login successful",
+        id: user.id,
+        type: user.type, // this allows frontend to route based on role
+      });
+      
     } else {
       res.status(401).json({ message: "Invalid credentials" });
     }

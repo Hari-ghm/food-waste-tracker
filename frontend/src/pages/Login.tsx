@@ -1,7 +1,10 @@
 import { useState } from "react";
-import type { SignupFormData } from "../types"; // Adjust the path if needed
+import type { SignupFormData } from "../types"; 
+import { useNavigate } from "react-router-dom";
+
 
 const Login = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState<SignupFormData>({
     email: "",
     name: "",
@@ -28,7 +31,7 @@ const Login = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(formData), // formData should include email & password
       });
 
       const data = await response.json();
@@ -36,6 +39,18 @@ const Login = () => {
 
       console.log("Login successful:", data);
       alert("Login successful!");
+
+      // 👇 Redirect based on type
+      const { id, type } = data; 
+      if (type === "ngo") {
+        navigate(`/ngo/${id}`);
+      } else if (type === "household") {
+        navigate(`/household/${id}`);
+      } else if (type === "restaurant") {
+        navigate(`/restaurant/${id}`);
+      } else {
+        alert("Unknown user type");
+      }
     } catch (err: any) {
       console.error("Login error:", err.message);
       alert(`Error: ${err.message}`);

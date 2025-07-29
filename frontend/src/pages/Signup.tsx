@@ -32,7 +32,7 @@ const Signup = () => {
       alert("Passwords do not match.");
       return;
     }
-  
+    
     try {
       const response = await fetch("http://localhost:3001/api/signup", {
         method: "POST",
@@ -83,7 +83,7 @@ const Signup = () => {
           onChange={handleChange}
           className="w-full px-4 py-2 rounded bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-teal-500"
         >
-          <option value="ngo">NGO</option>
+          <option value="ngo">ngo</option>
           <option value="household">Household</option>
           <option value="restaurant">Restaurant</option>
         </select>
